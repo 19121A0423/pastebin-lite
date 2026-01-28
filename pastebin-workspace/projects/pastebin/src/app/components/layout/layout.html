@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="topbar">
+
+    <span class="title">Pastebin Lite</span>
+
+    
+</mat-toolbar>
+
+<mat-sidenav-container class="layout-container">
+
+    <mat-sidenav mode="side" opened class="sidenav">
+        <mat-nav-list>
+
+            <a mat-list-item routerLink="/create-paste" routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Create paste
+            </a>
+
+            <a mat-list-item routerLink="/view-paste" routerLinkActive="active-link">
+                View paste
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

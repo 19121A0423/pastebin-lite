@@ -1,0 +1,65 @@
+# =====================
+# Frontend (Angular / Node)
+# =====================
+node_modules/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+.angular/
+coverage/
+npm-debug.log
+yarn-error.log
+
+# =====================
+# Backend (Java / Maven)
+# =====================
+target/
+bin/
+gen/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# =====================
+# Logs
+# =====================
+*.log
+log/
+logs/
+
+# =====================
+# IDE / Editors
+# =====================
+.idea/
+.project
+.classpath
+.settings/
+.c9/
+*.launch
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+.metadata/
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Misc
+# =====================
+.sass-cache/
+connect.lock
+libpeerconnection.log
+typings/
+__screenshots__/

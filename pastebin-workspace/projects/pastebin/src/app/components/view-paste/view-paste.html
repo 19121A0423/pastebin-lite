@@ -1,0 +1,54 @@
+<div class="search-bar">
+
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Enter Paste ID</mat-label>
+        <input matInput [(ngModel)]="pasteId" placeholder="e.g. a9Lwjgcf">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="searchPaste()" [disabled]="!pasteId">
+        Fetch
+    </button>
+
+</div>
+
+<div class="paste-wrapper" *ngIf="paste && !errorMessage">
+
+    <h2>Paste</h2>
+
+    <!-- Paste content -->
+    <pre class="paste-content">
+{{ paste.content }}
+  </pre>
+
+    <!-- Metadata -->
+    <div class="meta">
+
+        <div class="created-url" *ngIf="showCreatedUrl">
+            <p><strong>Paste URL:</strong></p>
+
+            <a [href]="createdUrl" target="_blank">
+                {{ createdUrl }}
+            </a>
+        </div>
+
+        <!-- Remaining views (0 should be shown) -->
+        <p *ngIf="paste.remainingViews !== undefined">
+            <strong>Remaining Views:</strong> {{ paste.remainingViews }}
+        </p>
+
+        <!-- Expiry -->
+        <p *ngIf="paste.expiresAt">
+            <strong>Expires At:</strong>
+            <span>
+                {{ paste.expiresAt | date:'medium':'IST' }}
+            </span>
+            <!-- <ng-template #neverExpire>Never</ng-template> -->
+        </p>
+
+    </div>
+
+</div>
+
+<div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+</div>

@@ -1,0 +1,44 @@
+<div class="form-wrapper">
+
+    <form (ngSubmit)="submitPaste()" #pasteForm="ngForm">
+
+        <h2>Create a Paste</h2>
+
+        <!-- Content -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Paste Content</mat-label>
+            <textarea matInput rows="3" name="content" required [(ngModel)]="content"></textarea>
+            <mat-error *ngIf="pasteForm.controls['content']?.errors?.['required']">
+                Content should not be empty
+            </mat-error>
+        </mat-form-field>
+
+        <!-- TTL -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>TTL (seconds)</mat-label>
+            <input matInput type="number" min="1" name="ttlSeconds" [(ngModel)]="ttlSeconds">
+            <mat-error *ngIf="pasteForm.controls['ttlSeconds']?.errors?.['min']">
+                TTL must be greater than 0
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Max Views -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Max Views</mat-label>
+            <input matInput type="number" min="1" name="maxViews" [(ngModel)]="maxViews">
+            <mat-error *ngIf="pasteForm.controls['maxViews']?.errors?.['min']">
+                Max views must be greater than 0
+            </mat-error>
+        </mat-form-field>
+
+        <div class="error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="pasteForm.invalid">
+            Create Paste
+        </button>
+
+    </form>
+
+</div>

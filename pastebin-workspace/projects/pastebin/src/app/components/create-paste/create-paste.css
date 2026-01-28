@@ -1,0 +1,26 @@
+/* Wrapper centers the form */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Actual form styling */
+form {
+  width: 80%;     
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Full-width inputs */
+.full-width {
+  width: 100%;
+}
+
+/* Error message */
+.error {
+  color: #d32f2f;
+  margin: 12px 0;
+}
