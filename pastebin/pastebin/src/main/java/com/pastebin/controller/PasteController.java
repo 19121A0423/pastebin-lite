@@ -71,9 +71,7 @@ public class PasteController {
 
         String baseUrl =
                 httpRequest.getScheme() + "://" +
-                        httpRequest.getServerName() +
-                        ":" +
-                        httpRequest.getServerPort();
+                        httpRequest.getServerName();
 
         String url = baseUrl + "/p/" + id;
 
