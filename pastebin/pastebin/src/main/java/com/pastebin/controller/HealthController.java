@@ -34,6 +34,8 @@ public class HealthController {
         boolean isHealthy = "ok".equals(value);
 
         log.info("Health check completed: redisHealthy={}", isHealthy);
+        log.info("Health check completed: redisHealthy={}", isHealthy);
+        log.info("Health check completed: redisHealthy={}", isHealthy);
 
         Map<String, Boolean> response = new HashMap<>();
         response.put("ok", isHealthy);
