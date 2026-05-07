@@ -1,22 +1,28 @@
 package com.pastebin.controller;
 
 
-import com.pastebin.dto.GetPasteResponse;
-import com.pastebin.dto.PasteRequest;
-import com.pastebin.dto.CreatePasteResponse;
-import com.pastebin.model.Paste;
-import com.pastebin.service.PasteService;
-import jakarta.servlet.http.HttpServletRequest;
+import java.time.Instant;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.HtmlUtils;
 
-import java.time.Instant;
-import java.util.Map;
+import com.pastebin.dto.CreatePasteResponse;
+import com.pastebin.dto.GetPasteResponse;
+import com.pastebin.dto.PasteRequest;
+import com.pastebin.model.Paste;
+import com.pastebin.service.PasteService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 
 @RestController
