@@ -31,4 +31,19 @@ public class GlobalExceptionHandler {
                         "message", "Something went wrong. Please try again later."
                 ));
     }
+
+     @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> handleCustomException(Exception ex) {
+
+        log.error("Unhandled exception occurred", ex);
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Map.of(
+                        "timestamp", Instant.now().toString(),
+                        "status", 500,
+                        "error", "Internal Server Error",
+                        "message", "Something went wrong. Please try again later."
+                ));
+    }
 }
